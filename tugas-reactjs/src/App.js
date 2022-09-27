@@ -4,6 +4,7 @@ import Tugas8 from "./Tugas8/tugas8";
 import Tugas9 from "./Tugas9/tugas9";
 import Tugas10 from "./Tugas10/tugas10";
 import Tugas11 from "./Tugas11/tugas11";
+import Tugas12 from "./Tugas12/tugas12";
 
 const App = () => {
   return (
@@ -11,8 +12,9 @@ const App = () => {
       {/* <Tugas7 />
       <Tugas8 name="Anjas Susetya" batch="38" email="anjasopo@gmail.com" />
       <Tugas9 />
-      <Tugas10 /> */}
-      <Tugas11 />
+      <Tugas10 />
+      <Tugas11 /> */}
+      <Tugas12 />
     </>
   );
 };
