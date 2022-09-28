@@ -40,21 +40,11 @@ const Tugas10 = () => {
               <td class="py-4 px-6">80</td>
               <td class="py-4 px-6">A</td>
               <td className="py-4 px-6 flex justify-evenly">
-                <button>
-                  <a
-                    href="#"
-                    className="font-medium text-black bg-white border-2 px-2 py-1 rounded-md border-slate-300"
-                  >
-                    Edit
-                  </a>
+                <button className="font-medium text-black bg-white border-2 px-2 py-1 rounded-md border-slate-300">
+                  Edit
                 </button>
-                <button>
-                  <a
-                    href="#"
-                    className="font-medium text-white bg-red-500 border-2 px-2 py-1 rounded-md border-slate-300"
-                  >
-                    Delete
-                  </a>
+                <button className="font-medium text-white bg-red-500 border-2 px-2 py-1 rounded-md border-slate-300">
+                  Delete
                 </button>
               </td>
             </tr>
@@ -70,21 +60,11 @@ const Tugas10 = () => {
               <td class="py-4 px-6">70</td>
               <td class="py-4 px-6">B</td>
               <td className="py-4 px-6 flex justify-evenly">
-                <button>
-                  <a
-                    href="#"
-                    className="font-medium text-black bg-white border-2 px-2 py-1 rounded-md border-slate-300"
-                  >
-                    Edit
-                  </a>
+                <button className="font-medium text-black bg-white border-2 px-2 py-1 rounded-md border-slate-300">
+                  Edit
                 </button>
-                <button>
-                  <a
-                    href="#"
-                    className="font-medium text-white bg-red-500 border-2 px-2 py-1 rounded-md border-slate-300"
-                  >
-                    Delete
-                  </a>
+                <button className="font-medium text-white bg-red-500 border-2 px-2 py-1 rounded-md border-slate-300">
+                  Delete
                 </button>
               </td>
             </tr>
@@ -100,21 +80,11 @@ const Tugas10 = () => {
               <td class="py-4 px-6">60</td>
               <td class="py-4 px-6">C</td>
               <td className="py-4 px-6 flex justify-evenly">
-                <button>
-                  <a
-                    href="#"
-                    className="font-medium text-black bg-white border-2 px-2 py-1 rounded-md border-slate-300"
-                  >
-                    Edit
-                  </a>
+                <button className="font-medium text-black bg-white border-2 px-2 py-1 rounded-md border-slate-300">
+                  Edit
                 </button>
-                <button>
-                  <a
-                    href="#"
-                    className="font-medium text-white bg-red-500 border-2 px-2 py-1 rounded-md border-slate-300"
-                  >
-                    Delete
-                  </a>
+                <button className="font-medium text-white bg-red-500 border-2 px-2 py-1 rounded-md border-slate-300">
+                  Delete
                 </button>
               </td>
             </tr>
@@ -130,21 +100,11 @@ const Tugas10 = () => {
               <td class="py-4 px-6">90</td>
               <td class="py-4 px-6">A</td>
               <td className="py-4 px-6 flex justify-evenly">
-                <button>
-                  <a
-                    href="#"
-                    className="font-medium text-black bg-white border-2 px-2 py-1 rounded-md border-slate-300"
-                  >
-                    Edit
-                  </a>
+                <button className="font-medium text-black bg-white border-2 px-2 py-1 rounded-md border-slate-300">
+                  Edit
                 </button>
-                <button>
-                  <a
-                    href="#"
-                    className="font-medium text-white bg-red-500 border-2 px-2 py-1 rounded-md border-slate-300"
-                  >
-                    Delete
-                  </a>
+                <button className="font-medium text-white bg-red-500 border-2 px-2 py-1 rounded-md border-slate-300">
+                  Delete
                 </button>
               </td>
             </tr>
