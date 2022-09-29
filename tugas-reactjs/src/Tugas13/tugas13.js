@@ -1,130 +1,33 @@
-import React from "react";
-import { useState } from "react";
+import React, { useContext } from "react";
 import { useEffect } from "react";
-import axios from "axios";
+import { GlobalContext } from "../context/GlobalContext";
 
 const Tugas13 = () => {
-  const [data, setData] = useState(null);
-
-  //CRUD DATA
-  const [input, setInput] = useState({
-    name: "",
-    course: "",
-    score: "",
-  });
-
-  //Indikator
-  const [fecthStatus, setFecthStatus] = useState(true);
-
-  //Indikator
-  const [currentId, setCurrentId] = useState(-1);
+  const { state, handleFunction } = useContext(GlobalContext);
+  const {
+    data,
+    setData,
+    input,
+    setInput,
+    fecthStatus,
+    setFecthStatus,
+    currentId,
+    setCurrentId,
+  } = state;
+  const {
+    handleInput,
+    handleSubmit,
+    handleDelete,
+    handleEdit,
+    handleIndexScore,
+    fetchData,
+  } = handleFunction;
 
   useEffect(() => {
     if (fecthStatus === true) {
-      axios
-        .get("https://backendexample.sanbercloud.com/api/student-scores")
-        .then((res) => {
-          setData([...res.data]);
-        })
-        .catch((error) => {});
-      setFecthStatus(false);
+      fetchData();
     }
   }, [fecthStatus, setFecthStatus]);
-
-  const handleInput = (event) => {
-    let name = event.target.name;
-    let value = event.target.value;
-
-    if (name === "name") {
-      setInput({ ...input, name: value });
-    } else if (name === "course") {
-      setInput({ ...input, course: value });
-    } else if (name === "score") {
-      setInput({ ...input, score: value });
-    }
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    let { name, course, score } = input;
-
-    if (currentId === -1) {
-      axios
-        .post("https://backendexample.sanbercloud.com/api/student-scores", {
-          name,
-          course,
-          score,
-        })
-        .then((res) => {
-          console.log(res);
-          setFecthStatus(true);
-        });
-    } else {
-      axios
-        .put(
-          `https://backendexample.sanbercloud.com/api/student-scores/${currentId}`,
-          { name, course, score }
-        )
-
-        .then((res) => {
-          setFecthStatus(true);
-        });
-    }
-
-    setCurrentId(-1);
-
-    setInput({
-      name: "",
-      course: "",
-      score: "",
-    });
-  };
-
-  const handleDelete = (event) => {
-    let idData = parseInt(event.target.value);
-
-    axios
-      .delete(
-        `https://backendexample.sanbercloud.com/api/student-scores/${idData}`
-      )
-      .then((res) => {
-        setFecthStatus(true);
-      });
-  };
-
-  const handleEdit = (event) => {
-    let idData = parseInt(event.target.value);
-    setCurrentId(idData);
-
-    axios
-      .get(
-        `https://backendexample.sanbercloud.com/api/student-scores/${idData}`
-      )
-      .then((res) => {
-        let data = res.data;
-
-        setInput({
-          name: data.name,
-          course: data.course,
-          score: data.score,
-        });
-      });
-  };
-
-  const handleIndexScore = (s) => {
-    if (s >= 80) {
-      return "A";
-    } else if (s >= 70 && s < 80) {
-      return "B";
-    } else if (s >= 60 && s < 70) {
-      return "C";
-    } else if (s >= 50 && s < 60) {
-      return "D";
-    } else {
-      return "E";
-    }
-  };
 
   return (
     <>
