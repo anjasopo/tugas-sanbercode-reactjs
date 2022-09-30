@@ -1,9 +1,12 @@
 import axios from "axios";
 import { createContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const GlobalContext = createContext();
 
 export const GlobalProvider = (props) => {
+  let navigate = useNavigate();
+
   const [data, setData] = useState(null);
   //CRUD DATA
   const [input, setInput] = useState({
@@ -43,6 +46,7 @@ export const GlobalProvider = (props) => {
         .then((res) => {
           console.log(res);
           setFecthStatus(true);
+          navigate("/tugas15");
         });
     } else {
       axios
@@ -53,6 +57,7 @@ export const GlobalProvider = (props) => {
 
         .then((res) => {
           setFecthStatus(true);
+          navigate("/tugas15");
         });
     }
 
@@ -80,20 +85,7 @@ export const GlobalProvider = (props) => {
   const handleEdit = (event) => {
     let idData = parseInt(event.target.value);
     setCurrentId(idData);
-
-    axios
-      .get(
-        `https://backendexample.sanbercloud.com/api/student-scores/${idData}`
-      )
-      .then((res) => {
-        let data = res.data;
-
-        setInput({
-          name: data.name,
-          course: data.course,
-          score: data.score,
-        });
-      });
+    navigate(`/edit/${idData}`);
   };
   //ConvertScore
   const handleIndexScore = (s) => {
