@@ -8,8 +8,13 @@ module.exports = {
     "./node_modules/flowbite/**/*.js",
     "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
   ],
+  darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        clifford: "#da373d",
+      },
+    },
   },
   plugins: [require("Flowbite/plugin")],
 };
